@@ -2,10 +2,12 @@
 Unity game. 
 
 ** BASIC RULES **
--Each script serves one purpose.
--Try to make them applicable to player and NPC
--Sign and comment each script
--if they are player or npc specific the script name should reflect it.
+
+- Each script serves one purpose.
+- Try to make them applicable to player and NPC
+- Sign and comment each script
+- if they are player or npc specific the script name should reflect it.
+
 example:  wallDetection - detects when any player or NPC collides with wall
 	  playerDoorDetection - detects when the player is colliding with door, and controls player/door interaction.
 	  playerHealth -  only manages player health
