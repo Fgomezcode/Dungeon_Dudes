@@ -1,10 +1,9 @@
 # Dungeon_Dudes
 Unity game. 
 
-** BASIC RULES **
+** BASIC GUIDELINES **
 
-- Each script serves one purpose.
-- Try to make them applicable to player and NPC
+- Ideally the script only manages one thing. can be a single function or a single system. 
 - Sign and comment each script
 - if they are player or npc specific the script name should reflect it.
 
