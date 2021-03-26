@@ -10,9 +10,13 @@ public  abstract class Damageable : MonoBehaviour
 {
 
     //allows you to set the item health in the editor
+    [Header("Set Individual Object Health")]
+    [Tooltip("Health is set to maxhealth at runtime.")]
+
+    // if the value is not set at runtime this is the default value.
     [SerializeField]
-    private float maxHealth;
-    public float health;
+    private float maxHealth = 5;
+    public float health = 5;
 
     //assigns max health upon instance
     private void Awake()

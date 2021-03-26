@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public float moveSpeed;
 
     //this is the player body
+    [Header("Assigned at runtime")]
     public Rigidbody2D playerBody;
 
     //this will let us store the values from user input
@@ -31,6 +32,7 @@ public class Movement : MonoBehaviour
     //****MUST BE ATTACHED TO THE PRIME PARENT OBJECT****
     private void Awake()
     {
+        //moveSpeed = 10;
         //assign the RigidBody2D
         playerBody = GetComponent<Rigidbody2D>();
     }
