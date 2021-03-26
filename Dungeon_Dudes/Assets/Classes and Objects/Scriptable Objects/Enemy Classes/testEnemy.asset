@@ -12,11 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc33fc75ec942141bac9a9fd0f3b8a0, type: 3}
   m_Name: testEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  chaseSpeed: 0
-  patrolSpeed: 0
-  enemySprite: {fileID: 0}
-  enemyProjectileSprite: {fileID: 0}
+  maxHealth: 5
+  chaseSpeed: 5.26
+  patrolSpeed: 2.35
+  baseDamage: 45
+  maxDamage: 0
+  canShoot: 1
+  lineOfSight: 3
+  aggroLineOfSight: 3.79
+  projectile: {fileID: 3951482234638414275, guid: b68889fc18582fd42a2e48d36d90cba5, type: 3}
+  shootingRange: 2.52
+  projectileSpeed: 4.55
+  projectileLife: 0.51
+  fireRate: 0.5
+  enemySprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  enemyProjectileSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   lootPool: 
   isHealthDrop: 0
   isManaDrop: 0

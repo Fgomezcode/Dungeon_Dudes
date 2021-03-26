@@ -14,7 +14,14 @@ public class PlayerTakeDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        damagePlayer(2);
+        //damagePlayer(2);
+
+        EnemyClass enemy = collision.GetComponent<EnemyClass>();
+        if(enemy != null)
+        {
+            damagePlayer(enemy.enemyCharacter.baseDamage);
+            Debug.Log("Collided with enemy");
+        }
     }
 
     //This function will subtract 'damage' from player health every time it is called
