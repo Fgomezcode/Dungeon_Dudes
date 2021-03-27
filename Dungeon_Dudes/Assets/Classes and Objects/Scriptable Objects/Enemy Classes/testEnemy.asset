@@ -17,7 +17,7 @@ MonoBehaviour:
   patrolSpeed: 2.35
   baseDamage: 45
   maxDamage: 0
-  canShoot: 1
+  canShoot: 0
   lineOfSight: 3
   aggroLineOfSight: 3.79
   projectile: {fileID: 3951482234638414275, guid: b68889fc18582fd42a2e48d36d90cba5, type: 3}
