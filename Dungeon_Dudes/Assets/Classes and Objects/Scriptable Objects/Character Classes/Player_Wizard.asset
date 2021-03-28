@@ -19,4 +19,4 @@ MonoBehaviour:
   keys: 3
   mana: 5
   playerSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  playerProjectileSprite: {fileID: 0}
+  playerProjectile: {fileID: 7501042291351717043, guid: a84264ed56d26cb49832d43e5a432f72, type: 3}

@@ -31,5 +31,9 @@ public class PlayerObject : ScriptableObject
     public Sprite playerSprite;
     
     [SerializeField]
-    public Sprite playerProjectileSprite;
+    [Header("Shooting Stats")]
+   // public Sprite playerProjectileSprite;
+    public GameObject playerProjectile;
+  
+   
 }

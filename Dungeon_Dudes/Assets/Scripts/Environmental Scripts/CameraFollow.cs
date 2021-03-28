@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    //not finished or attached to camera.
-    //FG 3/27
+    /*This function makes the camera follow the main player,
+     * it assigns the player tag id to playerToFollow on spawn.
+     */
+    public GameObject playerToFollow;
 
+    Transform target;
 
-    public Camera mainCamera;
-    public Transform playerToFollow;
+    public Vector3 offset;
 
+    [Range(0.5f, 10f)]
+    public float cameraSmoothing;
 
-    void Start()
+    private void Start()
     {
-        mainCamera.transform.position = playerToFollow.transform.position;
+        playerToFollow = GameObject.FindGameObjectWithTag("Player");
+        target = playerToFollow.transform;
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
-        mainCamera.transform.position = playerToFollow.transform.position;
+        cameraDelay();
+    }
+
+    void cameraDelay()
+    {
+        Vector3 targetPosition = target.position + offset;
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
+        transform.position = smoothPosition;
     }
 }
+
