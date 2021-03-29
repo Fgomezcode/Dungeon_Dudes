@@ -34,6 +34,8 @@ public class PlayerObject : ScriptableObject
     [Header("Shooting Stats")]
    // public Sprite playerProjectileSprite;
     public GameObject playerProjectile;
-  
+
+    public string classTag;
+    public Animator animator;
    
 }

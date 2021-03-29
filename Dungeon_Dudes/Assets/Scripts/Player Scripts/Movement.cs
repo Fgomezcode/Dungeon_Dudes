@@ -23,18 +23,20 @@ public class Movement : MonoBehaviour
     [Header("Assigned at runtime")]
     public Rigidbody2D playerBody;
 
+    private SpriteRenderer playerSprite;
     //this will let us store the values from user input
     //in the x and y coor of this 2Directional vector
-    Vector2 movement;
+    public Vector2 movement;
 
     //This function finds the RigidBody2D of the object this 
     //script is attached to as soon as the object is spawned.
     //****MUST BE ATTACHED TO THE PRIME PARENT OBJECT****
     private void Awake()
     {
-        //moveSpeed = 10;
         //assign the RigidBody2D
         playerBody = GetComponent<Rigidbody2D>();
+
+        playerSprite = GetComponent<SpriteRenderer>();
     }
 
     //this is best used for user input, is framerate dependent.
@@ -44,6 +46,7 @@ public class Movement : MonoBehaviour
 
         // assign the Horiz value to Vector2.x (movement.x) - uses Horizontal Unity keyword
         movement.x = Input.GetAxisRaw("Horizontal");
+        if (movement.x < 0){ playerSprite.flipX = true; }
 
         // assig the Vert value to Vector2.y (movement.y) - uses Vertical Unity Keyword
         movement.y = Input.GetAxisRaw("Vertical");

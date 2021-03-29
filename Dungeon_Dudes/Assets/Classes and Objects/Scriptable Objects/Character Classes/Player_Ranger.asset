@@ -18,5 +18,7 @@ MonoBehaviour:
   minMoveSpeed: 4
   keys: 4
   mana: 2
-  playerSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  playerSprite: {fileID: 21300000, guid: 98dcb1e2db86ac149b663dae83a694d9, type: 3}
   playerProjectile: {fileID: 7501042291351717043, guid: 7465cfadf3541cb4a9a78450132808b2, type: 3}
+  classTag: Ranger
+  animator: {fileID: 9100000, guid: bc27126758863e3489d13bb9b4065167, type: 2}

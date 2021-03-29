@@ -14,10 +14,11 @@ public class CharacterClass : MonoBehaviour
 
     [Header("Warrior, Wizard, Ranger, Valkyrie")]
     public PlayerObject character;
-
+    
     private void Awake()
     {
         applyClass(character);
+   
     }
 
     private void applyClass(PlayerObject character)
@@ -29,6 +30,7 @@ public class CharacterClass : MonoBehaviour
         // find the sprite renderer attached to this object and assign the chracter sprite 
         // to the sprite renderer --- overwrites any sprite that is being used for work purposes
         gameObject.GetComponent<SpriteRenderer>().sprite = character.playerSprite;
+  
     }
    
 
