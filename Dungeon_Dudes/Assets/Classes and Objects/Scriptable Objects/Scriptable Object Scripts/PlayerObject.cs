@@ -18,6 +18,11 @@ public class PlayerObject : ScriptableObject
     public float MoveSpeed;
     public float minMoveSpeed;
 
+    [Header("Damage Done to Enemy on Collision")]
+    public float collisionDamage;
+
+    [Header("Projectile Damage")]
+    public float projectileDamage;
     //these values set inventory limits
     [Header("Inventory Space")]
     [Tooltip("Set Max value: ")]

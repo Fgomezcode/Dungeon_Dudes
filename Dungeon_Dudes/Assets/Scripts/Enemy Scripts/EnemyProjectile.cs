@@ -14,20 +14,23 @@ public class EnemyProjectile : MonoBehaviour
 
     GameObject target;
     Rigidbody2D projectileBody;
+    EnemyObject enemyCharacter;
+
 
     private float projectileSpeed;
     public float projectileLife;
+    public float projectileDamage;
     void Start()
     {
-        projectileSpeed = GameObject.FindObjectOfType<EnemyClass>().enemyCharacter.projectileSpeed;
-        projectileLife = GameObject.FindObjectOfType<EnemyClass>().enemyCharacter.projectileLife;
+        enemyCharacter = FindObjectOfType<EnemyClass>().enemyCharacter;
+        projectileSpeed = enemyCharacter.projectileSpeed;
+        projectileLife = enemyCharacter.projectileLife;
+        projectileDamage = enemyCharacter.projectileDamage;
         target = GameObject.FindGameObjectWithTag("Player");
 
         projectileBody = GetComponent<Rigidbody2D>();
         Vector2 moveDirection = (target.transform.position - transform.position).normalized * projectileSpeed;
         projectileBody.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, projectileLife);
-    }   
-
-  
+    } 
 }

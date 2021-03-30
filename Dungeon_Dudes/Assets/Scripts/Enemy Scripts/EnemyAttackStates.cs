@@ -32,13 +32,35 @@ public class EnemyAttackStates : MonoBehaviour
     public GameObject enemyProjectileParent;
     [Header("Player Target")]
     public Transform playerPosition;
+    public Transform enemySpawnerPosition;
+
+
+
 
     void Start()
+    {
+        loadAssets();
+    }
+ 
+
+
+    //this will only work if there is a player on the screen.
+    private void FixedUpdate()
+    {
+
+        findTransform();
+
+    }
+    
+
+    //FUNCTIONS
+
+
+    private void loadAssets()
     {
         //assign values from enemy scriptable object
         canShoot = gameObject.GetComponent<EnemyClass>().enemyCharacter.canShoot;
 
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
         fireRate = gameObject.GetComponent<EnemyClass>().enemyCharacter.fireRate;
         moveSpeed = gameObject.GetComponent<EnemyClass>().enemyCharacter.patrolSpeed;
 
@@ -47,45 +69,64 @@ public class EnemyAttackStates : MonoBehaviour
         shootingRange = gameObject.GetComponent<EnemyClass>().enemyCharacter.shootingRange;
         enemyProjectile = gameObject.GetComponent<EnemyClass>().enemyCharacter.projectile;
 
+
+        enemySpawnerPosition = GameObject.FindGameObjectWithTag("EnemySpawner").transform;
+
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            gameObject.transform.position = enemySpawnerPosition.transform.position;
+        }
     }
 
-    private void FixedUpdate()
+
+    private void findTransform()
     {
-        float distanceFromPlayer = Vector2.Distance(playerPosition.position, transform.position);
-        float temp = lineOfsight;
-
-        if (playerPosition != null)
+        if (playerPosition == true)
         {
-            if (canShoot == false)
+            float distanceFromPlayer = Vector2.Distance(playerPosition.position, transform.position);
+            float temp = lineOfsight;
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+            if (playerPosition != null)
             {
-                if (distanceFromPlayer < lineOfsight)
+                if (canShoot == false)
                 {
-                    transform.position = Vector2.MoveTowards(this.transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
-                    
-                }
-            }
+                    if (distanceFromPlayer < lineOfsight)
+                    {
+                        transform.position = Vector2.MoveTowards(this.transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
 
-            else if (canShoot == true)
+                    }
+                }
+
+                else if (canShoot == true)
+                {
+                    if (distanceFromPlayer < lineOfsight && distanceFromPlayer > shootingRange)
+                    {
+                        transform.position = Vector2.MoveTowards(this.transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
+                        lineOfsight = aggroLineOfSight;
+                    }
+                    else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
+                    {
+                        Instantiate(enemyProjectile, enemyProjectileParent.transform.position, Quaternion.identity);
+                        nextFireTime = Time.time + fireRate;
+
+                    }
+                    else
+                    {
+                        lineOfsight = temp;
+                    }
+                }
+
+            }
+            else
             {
-                if (distanceFromPlayer < lineOfsight && distanceFromPlayer > shootingRange)
-                {
-                    transform.position = Vector2.MoveTowards(this.transform.position, playerPosition.position, moveSpeed * Time.deltaTime);
-                    lineOfsight = aggroLineOfSight;
-                }
-                else if (distanceFromPlayer <= shootingRange && nextFireTime < Time.time)
-                {
-                    Instantiate(enemyProjectile, enemyProjectileParent.transform.position, Quaternion.identity);
-                    nextFireTime = Time.time + fireRate;
-                    
-                }
-                else
-                {
-                    lineOfsight = temp;
-                }
+                gameObject.transform.position = enemySpawnerPosition.transform.position;
             }
-
         }
-
     }
 
     private void OnDrawGizmosSelected()

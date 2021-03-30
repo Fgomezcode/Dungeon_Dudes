@@ -12,16 +12,14 @@ public class PlayerTakeDamage : MonoBehaviour
     // simple collider check- applies two damage anytime it collides with anything
     //testing purposes only
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //damagePlayer(2);
-
-        EnemyClass enemy = collision.GetComponent<EnemyClass>();
+        EnemyClass enemy = collision.gameObject.GetComponent<EnemyClass>();
         if(enemy != null)
         {
             damagePlayer(enemy.enemyCharacter.baseDamage);
             Debug.Log("Collided with enemy");
-        }
+        }  
     }
 
     //This function will subtract 'damage' from player health every time it is called
@@ -38,12 +36,8 @@ public class PlayerTakeDamage : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            
         }
-
     }
-
-
 }
 
 

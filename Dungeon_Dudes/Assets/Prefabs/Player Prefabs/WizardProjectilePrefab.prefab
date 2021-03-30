@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7501042291351717041}
   m_Layer: 0
   m_Name: WizardProjectilePrefab
-  m_TagString: Untagged
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,3 +118,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileStats: {fileID: 11400000, guid: b5bb961dc2cf1fe41ae57da60f057e74, type: 2}
+  projectileDamage: 0
+  projectileMaxDamage: 0

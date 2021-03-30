@@ -16,4 +16,6 @@ MonoBehaviour:
   playerProjectileSpeed: 4
   playerProjectileReload: 2
   playerProjectileTimer: 0
+  playerProjectileBaseDamage: 1.01
+  playerProjectileMaxDamage: 0
   playerProjectileLife: 2

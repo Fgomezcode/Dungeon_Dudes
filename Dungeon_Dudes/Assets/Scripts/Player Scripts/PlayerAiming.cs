@@ -25,7 +25,15 @@ public class PlayerAiming : MonoBehaviour
     void Update()
     {
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        firePointBody.transform.position = playerPosition.transform.position;
+        if(playerPosition)
+        { 
+            firePointBody.transform.position = playerPosition.transform.position;
+        }
+
+        if(playerPosition == null)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void FixedUpdate()

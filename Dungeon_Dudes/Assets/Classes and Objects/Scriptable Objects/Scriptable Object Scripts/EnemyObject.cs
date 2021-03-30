@@ -21,6 +21,8 @@ public class EnemyObject : ScriptableObject
     public float baseDamage;
     public float maxDamage;
 
+
+    public float projectileDamage;
     //shooting stats
     [Header("Shooting Stats")]
     public bool canShoot = false;
@@ -29,6 +31,7 @@ public class EnemyObject : ScriptableObject
     [Range(0f, 10f)]
     public float aggroLineOfSight;
     [Range(0f, 10f)]
+    [HideInInspector]
     public GameObject projectile;
     public float shootingRange;
     public float projectileSpeed;

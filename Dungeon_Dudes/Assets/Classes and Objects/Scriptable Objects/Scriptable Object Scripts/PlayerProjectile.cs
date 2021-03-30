@@ -12,6 +12,9 @@ public class PlayerProjectile : ScriptableObject
     public float playerProjectileSpeed;
     public float playerProjectileReload;
     public float playerProjectileTimer;
+    [Header("Projectile Damage Stats")]
+    public float playerProjectileBaseDamage;
+    public float playerProjectileMaxDamage;
     [Header("Time Before Destroy")]
     public float playerProjectileLife;
 

@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7501042291351717040}
   - component: {fileID: 7501042291351717041}
   m_Layer: 0
-  m_Name: PlayerProjectile
-  m_TagString: Untagged
+  m_Name: ValyrieProjectilePrefab
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,13 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aec18a56a832874c88d14df163e91ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType:
-  - {fileID: 11400000, guid: 9169f07458c79674bb8e2514140a7861, type: 2}
-  - {fileID: 11400000, guid: c413372b442391b4ea4cd9668ca9d985, type: 2}
-  - {fileID: 11400000, guid: 31fef2a2987f52343af5fc7ab31c32a2, type: 2}
-  - {fileID: 11400000, guid: b5bb961dc2cf1fe41ae57da60f057e74, type: 2}
   projectileStats: {fileID: 11400000, guid: c413372b442391b4ea4cd9668ca9d985, type: 2}
-  isRanger: 0
-  isValkyrie: 0
-  isWarrior: 0
-  isWizard: 1
+  projectileDamage: 0
+  projectileMaxDamage: 0

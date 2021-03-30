@@ -29,9 +29,21 @@ public class CameraFollow : MonoBehaviour
 
     void cameraDelay()
     {
-        Vector3 targetPosition = target.position + offset;
-        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
-        transform.position = smoothPosition;
+        if(target)
+        { 
+            Vector3 targetPosition = target.position + offset;
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
+            transform.position = smoothPosition;
+        }
+        else
+        {
+            Vector3 targetPosition = gameObject.transform.position + offset;
+            Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
+            transform.position = smoothPosition;
+
+        }
+        //Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
+        //transform.position = smoothPosition;
     }
 }
 

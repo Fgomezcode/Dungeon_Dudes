@@ -11,11 +11,22 @@ public class ProjectileClass : MonoBehaviour
      */
    
     public PlayerProjectile projectileStats;
+    [HideInInspector]
+    public float projectileDamage;
+    [HideInInspector]
+    public float projectileMaxDamage;
+
 
     SpriteRenderer playerProjectileSprite;
    
     void Start()
-    {   
+        
+    {
+
+        projectileStats = GetComponent<ProjectileClass>().projectileStats;
+
+        projectileDamage = projectileStats.playerProjectileBaseDamage;
+        projectileMaxDamage = projectileStats.playerProjectileMaxDamage;
         //access the sprite renderer attached to the projectile
         playerProjectileSprite = GetComponent<SpriteRenderer>();
 

@@ -38,11 +38,15 @@ public class EnemySpawner : MonoBehaviour
     public float spawnRate;
 
     float nextSpawn = 0;
-    Vector2 whereToSpawn;
+
+
+    public int maxEnemies;
+
+    public float spawnerHealth;
 
 void Start()
     {
-        InvokeRepeating("spawnEnemy", 1, spawnRate);
+      
 
         //This spawns a random enemy it will be assigned a random value based on 
         //the amount of enemies stored.
@@ -52,6 +56,16 @@ void Start()
         }
     }
 
+    private void Update()
+    {
+        if (maxEnemies > 0)
+        {
+            Invoke("spawnEnemy", spawnRate);
+        }
+
+        //InvokeRepeating("spawnEnemy", 1, 5f);
+    }
+
     void spawnEnemy()
     {
         if (Time.time>nextSpawn)
@@ -59,8 +73,31 @@ void Start()
             nextSpawn = Time.time + spawnRate;
             spawnPosX = Random.Range(spawnXmin, spawnXmax);
             spawnPosY = Random.Range(spawnYmin, spawnYmax);
-            whereToSpawn = new Vector2( gameObject.transform.position.x + spawnPosX,gameObject.transform.position.y + spawnPosY);
+            Vector2 whereToSpawn = new Vector2( gameObject.transform.position.x + spawnPosX,gameObject.transform.position.y + spawnPosY);
             Instantiate(enemyToSpawn[enemyChoice], whereToSpawn, Quaternion.identity);
+            --maxEnemies;
+        }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerProjectile")
+        {
+            takeDamage(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage);
+            Destroy(collision.gameObject);
+            Debug.Log(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage + spawnerHealth);
+            Debug.Log("spawner hit");
+        }
+    }
+
+    public void takeDamage(float damage)
+    {
+        spawnerHealth -= damage;
+        if (spawnerHealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
