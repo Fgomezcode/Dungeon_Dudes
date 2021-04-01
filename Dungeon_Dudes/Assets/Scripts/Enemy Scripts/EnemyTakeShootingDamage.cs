@@ -1,9 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyTakeShootingDamage : MonoBehaviour
 {
+    /*This script detects when an enemy is hit and applies damage 
+     * FG 3/30
+     */
+
+
     [HideInInspector]
     public float enemyHealth;
 

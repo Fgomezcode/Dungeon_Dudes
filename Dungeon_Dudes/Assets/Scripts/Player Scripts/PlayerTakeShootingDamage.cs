@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerTakeShootingDamage : MonoBehaviour
 {
+    //This function applies damag when the player is shot, 
+    //uses triggers instead of collisions.
+    //FG 3/30
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "EnemyProjectile")
@@ -11,9 +13,7 @@ public class PlayerTakeShootingDamage : MonoBehaviour
             damagePlayer(collision.GetComponent<EnemyProjectile>().projectileDamage);
             Destroy(collision.gameObject);
             Debug.Log("Youve been shot "+ collision.GetComponent<EnemyProjectile>().projectileDamage);
-
         }
-
     }
 
     public void damagePlayer(float damage)

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5889cd79064b7d3439c36882107ab562, type: 3}
   m_Name: ValkyrieProjectile
   m_EditorClassIdentifier: 
-  playerProjectileSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  playerProjectileSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   playerProjectileSpeed: 10
   playerProjectileReload: 0.25
-  playerProjectileTimer: 0.2517941
+  playerProjectileTimer: 0.25126883
+  playerProjectileBaseDamage: 5
+  playerProjectileMaxDamage: 0
   playerProjectileLife: 1.72

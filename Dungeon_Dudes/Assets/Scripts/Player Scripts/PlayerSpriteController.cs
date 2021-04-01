@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerSpriteController : MonoBehaviour
 {
+
+    /*This script will flip the sprite so that it faces the movement direction
+     * it will also flip to face the mouse if the player is not moving.
+     */
     Movement playerMovement;
     SpriteRenderer playerSprite;
     GameObject player;
@@ -19,6 +21,12 @@ public class PlayerSpriteController : MonoBehaviour
     {
         flip();
     }
+
+    //
+    //
+    //
+    //
+    //
 
     public void flip()
     {

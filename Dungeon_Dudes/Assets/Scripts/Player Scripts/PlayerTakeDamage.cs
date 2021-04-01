@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerTakeDamage : MonoBehaviour
 {
@@ -9,8 +7,9 @@ public class PlayerTakeDamage : MonoBehaviour
      * FG 3/25
      */
 
-    // simple collider check- applies two damage anytime it collides with anything
-    //testing purposes only
+    /*This script detects when an enemy collides with the player and applies appropriate damage
+     * FG 3/30
+     */
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5889cd79064b7d3439c36882107ab562, type: 3}
   m_Name: RangerProjectile
   m_EditorClassIdentifier: 
-  playerProjectileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  playerProjectileSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   playerProjectileSpeed: 7
   playerProjectileReload: 0.45
-  playerProjectileTimer: 0.45161527
+  playerProjectileTimer: 0.45094413
+  playerProjectileBaseDamage: 5
+  playerProjectileMaxDamage: 0
   playerProjectileLife: 1

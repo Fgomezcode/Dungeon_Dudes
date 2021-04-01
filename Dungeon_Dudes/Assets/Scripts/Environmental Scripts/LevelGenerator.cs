@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+	//DO NOT USE IN FINAL VERSION, REWRITE THIS CODE, STUDY AND MODIFY
+
+
 	enum gridSpace { empty, floor, wall };
 	gridSpace[,] grid;
 	int roomHeight, roomWidth;

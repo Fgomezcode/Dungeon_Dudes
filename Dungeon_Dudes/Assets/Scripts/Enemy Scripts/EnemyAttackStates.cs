@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyAttackStates : MonoBehaviour
 {
@@ -8,6 +6,15 @@ public class EnemyAttackStates : MonoBehaviour
      * to use ontrigger2d enter/exit
      * FG 3/26
      */
+
+
+    /*This script sets 2 ranges. the first is when the enemy starts chasing the player, 
+     * the second is when it stops and starts shooting.
+     * if the enemy is set to not ranged it will chase the enemy, until out of range,
+     * it will then start moving back towards the enemyspawner
+     * FG 3/30
+     */
+
     [Header("Enemy Move Speed")]
     private float moveSpeed;
 
@@ -34,28 +41,18 @@ public class EnemyAttackStates : MonoBehaviour
     public Transform playerPosition;
     public Transform enemySpawnerPosition;
 
-
-
-
     void Start()
     {
         loadAssets();
     }
  
-
-
     //this will only work if there is a player on the screen.
     private void FixedUpdate()
     {
-
         findTransform();
-
     }
     
-
     //FUNCTIONS
-
-
     private void loadAssets()
     {
         //assign values from enemy scriptable object
@@ -129,10 +126,13 @@ public class EnemyAttackStates : MonoBehaviour
         }
     }
 
+
+    //This draws the ranges on the game scene
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, lineOfsight);
+        Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 

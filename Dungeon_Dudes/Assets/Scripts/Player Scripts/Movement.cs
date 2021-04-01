@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /*
  * This script handles the player movement in horizontal and vertical
@@ -30,6 +28,7 @@ public class Movement : MonoBehaviour
 
     //This function finds the RigidBody2D of the object this 
     //script is attached to as soon as the object is spawned.
+
     //****MUST BE ATTACHED TO THE PRIME PARENT OBJECT****
     private void Awake()
     {

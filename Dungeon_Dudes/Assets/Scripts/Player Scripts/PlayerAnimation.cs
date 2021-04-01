@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
     public Animator animator;
     private string currentState;
     private PlayerObject character;
+
+    //This is not attached to the player yet
+    //May not be neccessary, FG 3/30
 
     //***** ANIMATION NAMES ARE CASE SENSITIVE, MUST BE THE EXACT SAME AS THE ANIMATION FILE********//
 
@@ -25,13 +26,11 @@ public class PlayerAnimation : MonoBehaviour
 
     void Start()
     {
-        //FIND AND ASSIGN THE COMPONENTS
+        //CACHE COMPONENTS
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterClass>().character;
        
     }
-
-   
 
     //THIS FUNCTION CHANGES THE ANIMATIONS TO MATCH THE STATE
     // Unity changes animations with string values

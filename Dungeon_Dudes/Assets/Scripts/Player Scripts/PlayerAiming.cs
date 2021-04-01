@@ -1,22 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerAiming : MonoBehaviour
 {
-    // Rotate firepoint to face mouse.
-    Transform playerPosition;
-    Rigidbody2D firePointBody;
-    Vector2 mousePosition;
-    Camera mainCamera;
+    /*This script controls the rotation of the fire point object attached to the player
+     * and must be attached to the playerBulletSpawn oject, which is a child of the player
+     * The mouse is located in world scene, and a vector is created and assigned to the bulletSpawner
+     */
 
+    Transform playerPosition;
+    Rigidbody2D playerProjectileSpawner;
+    Camera mainCamera;
+    Vector2 mousePosition;
+    string characterTag;
     // Start is called before the first frame update
     void Awake()
-    {   //this makes the object stick to the player by making their transforms the same value
-        playerPosition = GameObject.FindGameObjectWithTag("Player").transform; // follow player position
- 
+    {
+        //cache refs.
+
+        characterTag = GetComponentInParent<CharacterClass>().character.classTag;
+      
         //find the rigid body attached to the player
-        firePointBody = GetComponent<Rigidbody2D>();
+        playerProjectileSpawner = GetComponent<Rigidbody2D>();
 
         //scene camera, used to find and track the mouse position.
         mainCamera = FindObjectOfType<Camera>();
@@ -24,22 +28,38 @@ public class PlayerAiming : MonoBehaviour
 
     void Update()
     {
+        // call findMousePos every frame, so aiming is accurate
+        findMousePos();
+    }
+
+    private void FixedUpdate()
+    {
+        assignVector();
+        //this makes the object stick to the player by making their transforms the same value
+        playerPosition = GetComponentInParent<Transform>(); // follow player position
+
+    }
+
+    //this function finds the mouse position in the game world, and caches it so the fixed update can create a vector in that direction.
+    private void findMousePos()
+    {
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if(playerPosition)
-        { 
-            firePointBody.transform.position = playerPosition.transform.position;
+        if (playerPosition)
+        {
+            playerProjectileSpawner.transform.position = playerPosition.transform.position;
         }
 
-        if(playerPosition == null)
+        if (playerPosition == null)
         {
             gameObject.SetActive(false);
         }
     }
 
-    private void FixedUpdate()
+    //assigns the vector to player projectile spawner.
+    private void assignVector()
     {
-        Vector2 lookDirection = mousePosition - firePointBody.position;
+        Vector2 lookDirection = mousePosition - playerProjectileSpawner.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        firePointBody.rotation = angle;
+        playerProjectileSpawner.rotation = angle;
     }
 }

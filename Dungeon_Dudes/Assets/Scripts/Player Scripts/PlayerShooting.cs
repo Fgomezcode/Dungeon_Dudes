@@ -5,6 +5,12 @@ public class PlayerShooting : MonoBehaviour
     /*This script is kind of confusing and I will add the notes later,
      * FG 3/28
      */
+    
+    /*this script caches the shooting stats, and instantiates a playerprojectile
+     * with vector towards the mouseposition at the moment of instancing.
+     * this script need playeraiming script in order for it to work
+     * FG 3/30
+     */
 
     PlayerProjectile projectileStats; //projectile scriptable object
     PlayerObject character; //player scriptable object
@@ -36,14 +42,8 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        //check for player input
-        if (Input.GetButtonDown("Fire1"))
-        {
-            // call the shoot function
-            Shoot();
-        }
-        //start the reload timer
-        reloadTimer();
+        checkFire();
+
     }
 
     /*this function will spawn a bullet object and apply vector towards mouse position on screen
@@ -56,21 +56,32 @@ public class PlayerShooting : MonoBehaviour
             Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
             bulletBody.AddForce(firePoint.transform.up * projectileSpeed, ForceMode2D.Impulse);
            // character.playerProjectileTimer = 0; // set timer to zero and you cant shoot anymore
-
         }
 
         if (projectileStats.playerProjectileTimer >= projectileStats.playerProjectileReload)
         {
             projectileStats.playerProjectileTimer = 0;
         }
-
     }
 
+    //****************************************
     public void reloadTimer()
     {
         if (projectileStats.playerProjectileTimer < projectileStats.playerProjectileReload)
         {
             projectileStats.playerProjectileTimer += Time.deltaTime;
         }
+    }
+
+    void checkFire()
+    {
+        //check for player input
+        if (Input.GetButtonDown("Fire1"))
+        {
+            // call the shoot function
+            Shoot();
+        }
+        //start the reload timer
+        reloadTimer();
     }
 }
