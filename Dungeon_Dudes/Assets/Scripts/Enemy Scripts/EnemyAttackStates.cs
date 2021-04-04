@@ -50,6 +50,7 @@ public class EnemyAttackStates : MonoBehaviour
     private void FixedUpdate()
     {
         findTransform();
+        findTarget();
     }
     
     //FUNCTIONS
@@ -66,20 +67,8 @@ public class EnemyAttackStates : MonoBehaviour
         shootingRange = gameObject.GetComponent<EnemyClass>().enemyCharacter.shootingRange;
         enemyProjectile = gameObject.GetComponent<EnemyClass>().enemyCharacter.projectile;
 
-
         enemySpawnerPosition = GameObject.FindGameObjectWithTag("EnemySpawner").transform;
-
-        if (GameObject.FindGameObjectWithTag("Player"))
-        {
-
-            playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        else
-        {
-            gameObject.transform.position = enemySpawnerPosition.transform.position;
-        }
     }
-
 
     private void findTransform()
     {
@@ -117,7 +106,6 @@ public class EnemyAttackStates : MonoBehaviour
                         lineOfsight = temp;
                     }
                 }
-
             }
             else
             {
@@ -126,6 +114,17 @@ public class EnemyAttackStates : MonoBehaviour
         }
     }
 
+    void findTarget()
+    {
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        else
+        {
+            gameObject.transform.position = enemySpawnerPosition.transform.position;
+        }
+    }
 
     //This draws the ranges on the game scene
     private void OnDrawGizmosSelected()

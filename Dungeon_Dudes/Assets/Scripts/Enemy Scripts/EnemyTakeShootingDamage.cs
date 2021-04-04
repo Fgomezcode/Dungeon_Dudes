@@ -6,15 +6,12 @@ public class EnemyTakeShootingDamage : MonoBehaviour
      * FG 3/30
      */
 
-
     [HideInInspector]
     public float enemyHealth;
-
 
     private void Start()
     {
         enemyHealth = GetComponent<EnemyClass>().enemyCharacter.maxHealth;
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,9 +29,9 @@ public class EnemyTakeShootingDamage : MonoBehaviour
     {
         enemyHealth -= damage;
         if (enemyHealth <= 0)
-            {
-                Destroy(gameObject);
-            }
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

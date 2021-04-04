@@ -43,7 +43,6 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         checkFire();
-
     }
 
     /*this function will spawn a bullet object and apply vector towards mouse position on screen

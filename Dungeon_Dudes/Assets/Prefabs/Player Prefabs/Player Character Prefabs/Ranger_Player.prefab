@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3784718819660176819}
   - component: {fileID: 3784718819660176820}
   - component: {fileID: 3784718819660176821}
+  - component: {fileID: 1035277646821257311}
   m_Layer: 0
   m_Name: PlayerBulletSpawn
   m_TagString: Untagged
@@ -65,6 +66,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1035277646821257311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784718819660176816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebb37749583d260489c848ccc1dbf21c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0
+  bulletSpawnerBody: {fileID: 0}
+  movement: {x: 0, y: 0}
 --- !u!1 &3784718820069397369
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,18 +36,12 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Time Before Next Spawn")]
     public float spawnRate;
-
     float nextSpawn = 0;
-
-
     public int maxEnemies;
-
     public float spawnerHealth;
 
 void Start()
     {
-      
-
         //This spawns a random enemy it will be assigned a random value based on 
         //the amount of enemies stored.
        if(isRandom == true)
@@ -79,25 +73,4 @@ void Start()
         }
     }
 
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "PlayerProjectile")
-        {
-            takeDamage(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage);
-            Destroy(collision.gameObject);
-            Debug.Log(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage + spawnerHealth);
-            Debug.Log("spawner hit");
-        }
-    }
-
-    public void takeDamage(float damage)
-    {
-        spawnerHealth -= damage;
-        if (spawnerHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }

@@ -20,7 +20,14 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        cameraControl();
+        if (playerToFollow = GameObject.FindGameObjectWithTag("Player"))
+        {
+            cameraControl();
+        }
+        if(gameObject.GetComponent<CameraFollow>().playerToFollow == null)
+        {
+            playerToFollow = GameObject.FindGameObjectWithTag("GameController");
+        }
     }
 
     void cameraDelay()
@@ -36,10 +43,7 @@ public class CameraFollow : MonoBehaviour
             Vector3 targetPosition = gameObject.transform.position + offset;
             Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
             transform.position = smoothPosition;
-
         }
-        //Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing * Time.fixedDeltaTime);
-        //transform.position = smoothPosition;
     }
 
     void findPlayer()
@@ -52,7 +56,8 @@ public class CameraFollow : MonoBehaviour
     {
         cameraDelay();
         playerToFollow = GameObject.FindGameObjectWithTag("Player");
-        target = playerToFollow.transform;
+        target = playerToFollow.transform;  
+     
     }
 }
 

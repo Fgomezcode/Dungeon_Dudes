@@ -16,8 +16,11 @@ MonoBehaviour:
   maxStamina: 100
   MoveSpeed: 5
   minMoveSpeed: 4
+  collisionDamage: 5
+  projectileDamage: 0
   keys: 3
   mana: 3
   playerSprite: {fileID: 21300000, guid: 91253a53a71a67042b79dd2046ecc924, type: 3}
   playerProjectile: {fileID: 7501042291351717043, guid: 99e09d439a583624986f895a5b060f1f, type: 3}
   classTag: Valkyrie
+  animator: {fileID: 0}

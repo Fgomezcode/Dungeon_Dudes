@@ -13,7 +13,7 @@ public class EnemyTakeDamage : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        
         CharacterClass player = collision.gameObject.GetComponent<CharacterClass>();
 
         if(player != null)
@@ -28,6 +28,7 @@ public class EnemyTakeDamage : MonoBehaviour
 
     public void takeDamage(float damage)
     {
+
         enemyHealth -= damage;
     }
 }

@@ -11,14 +11,12 @@ public class PlayerAiming : MonoBehaviour
     Rigidbody2D playerProjectileSpawner;
     Camera mainCamera;
     Vector2 mousePosition;
-    string characterTag;
+
     // Start is called before the first frame update
     void Awake()
     {
         //cache refs.
 
-        characterTag = GetComponentInParent<CharacterClass>().character.classTag;
-      
         //find the rigid body attached to the player
         playerProjectileSpawner = GetComponent<Rigidbody2D>();
 
@@ -30,29 +28,17 @@ public class PlayerAiming : MonoBehaviour
     {
         // call findMousePos every frame, so aiming is accurate
         findMousePos();
-    }
 
-    private void FixedUpdate()
-    {
         assignVector();
-        //this makes the object stick to the player by making their transforms the same value
-        playerPosition = GetComponentInParent<Transform>(); // follow player position
 
     }
+
 
     //this function finds the mouse position in the game world, and caches it so the fixed update can create a vector in that direction.
     private void findMousePos()
     {
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        if (playerPosition)
-        {
-            playerProjectileSpawner.transform.position = playerPosition.transform.position;
-        }
-
-        if (playerPosition == null)
-        {
-            gameObject.SetActive(false);
-        }
+         
     }
 
     //assigns the vector to player projectile spawner.

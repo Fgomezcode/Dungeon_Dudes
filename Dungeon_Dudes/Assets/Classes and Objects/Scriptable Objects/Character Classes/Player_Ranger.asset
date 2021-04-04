@@ -16,7 +16,7 @@ MonoBehaviour:
   maxStamina: 125
   MoveSpeed: 6
   minMoveSpeed: 4
-  collisionDamage: 0
+  collisionDamage: 5
   projectileDamage: 0
   keys: 4
   mana: 2

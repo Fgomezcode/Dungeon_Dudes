@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterClass : MonoBehaviour
 {
@@ -18,21 +16,17 @@ public class CharacterClass : MonoBehaviour
     private void Awake()
     {
         applyClass(character);
-   
     }
 
     private void applyClass(PlayerObject character)
     {
         //find the movement script and assign the character class moveSpeed value
         //to the movement script moveSpeed value.
-        gameObject.GetComponent<Movement>().moveSpeed = character.MoveSpeed;
+        GetComponent<Movement>().moveSpeed = character.MoveSpeed;
 
         // find the sprite renderer attached to this object and assign the chracter sprite 
         // to the sprite renderer --- overwrites any sprite that is being used for work purposes
-        gameObject.GetComponent<SpriteRenderer>().sprite = character.playerSprite;
-  
+        GetComponent<SpriteRenderer>().sprite = character.playerSprite;
+
     }
-   
-
-
 }
