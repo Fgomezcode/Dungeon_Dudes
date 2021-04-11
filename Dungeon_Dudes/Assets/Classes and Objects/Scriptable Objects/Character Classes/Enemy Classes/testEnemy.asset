@@ -26,7 +26,7 @@ MonoBehaviour:
   projectileSpeed: 4.55
   projectileLife: 2.18
   fireRate: 0.5
-  enemySprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  enemySprite: {fileID: 21300000, guid: 1da1f9b96aaf36f449188565d4d5f09a, type: 3}
   enemyProjectileSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   lootPool: 
   isHealthDrop: 0

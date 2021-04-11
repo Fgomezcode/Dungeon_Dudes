@@ -16,6 +16,7 @@ public class PlayerAiming : MonoBehaviour
     void Awake()
     {
         //cache refs.
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform; // follow player position
 
         //find the rigid body attached to the player
         playerProjectileSpawner = GetComponent<Rigidbody2D>();
@@ -38,6 +39,7 @@ public class PlayerAiming : MonoBehaviour
     private void findMousePos()
     {
         mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        playerProjectileSpawner.transform.position = playerPosition.transform.position;
          
     }
 

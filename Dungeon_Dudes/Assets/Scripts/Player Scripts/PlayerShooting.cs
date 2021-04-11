@@ -22,10 +22,10 @@ public class PlayerShooting : MonoBehaviour
     {
         // find and access the components needed and assign appropriate values
         //access the projectile stats throught the character class,
-        projectileStats = gameObject.GetComponent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
-
+        // projectileStats = gameObject.GetComponent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
+        projectileStats = GetComponentInParent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
         //access the player character class
-        character = GetComponent<CharacterClass>().character;
+        character = GetComponentInParent<CharacterClass>().character;
 
         // assign the projectile prefab
         projectilePrefab = character.playerProjectile;

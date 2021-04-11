@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6674402498107108339}
   - component: {fileID: 2376646075119596708}
   - component: {fileID: 2860538245718582937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: testEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6674402498107108300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: 0.959, z: -0.44080716}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6674402498332469078}
@@ -96,8 +96,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1808301611
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 0.3301416, b: 0, a: 1}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6674402498332469078}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProjectileParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
