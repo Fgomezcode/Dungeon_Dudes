@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RoomSpawner : MonoBehaviour
 {
+    /*This will spawn a random room in any open spaces after the main route is spawned
+     * will only spawn open rooms
+     * FG 4/11
+     */
     public LayerMask whatIsRoom;
     public LevelGeneration levelGen;
 
@@ -13,7 +17,7 @@ public class RoomSpawner : MonoBehaviour
         if (roomDetection == null && levelGen.stopGeneration == true)
         {
             //spawn random room
-            int randomNum = Random.Range(0, levelGen.rooms.Length);
+            int randomNum = Random.Range(3, levelGen.rooms.Length);
             Instantiate(levelGen.rooms[randomNum], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

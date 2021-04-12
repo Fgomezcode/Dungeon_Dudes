@@ -7,6 +7,10 @@ public class CameraFollow : MonoBehaviour
      * FG 3/30
      */
 
+    /*corrected error where camera could not find player while the level was loading.
+     * FG 4/11
+     */
+
     public GameObject playerToFollow;
     Transform target;
     public Vector3 offset;
@@ -48,16 +52,23 @@ public class CameraFollow : MonoBehaviour
 
     void findPlayer()
     {
-        playerToFollow = GameObject.FindGameObjectWithTag("Player");
-        target = playerToFollow.transform;
+        if(playerToFollow != null)
+        {
+            playerToFollow = GameObject.FindGameObjectWithTag("Player");
+
+            target = playerToFollow.transform;
+        }
+        else
+        {
+            playerToFollow = GameObject.FindGameObjectWithTag("GameController");
+        }
     }
 
     void cameraControl()
     {
         cameraDelay();
         playerToFollow = GameObject.FindGameObjectWithTag("Player");
-        target = playerToFollow.transform;  
-     
+        target = playerToFollow.transform;       
     }
 }
 

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour
 {
+    /*This controls the level walker and spawner 
+     * will add comments soon
+     * FG 4/11
+     */
+
+
     [Header("LR = 0, LRB =1, LRT = 2, LRTB = 3")]
     public Transform[] startingPositions;
     public GameObject[] rooms; // 0 = LR 1 = LRB   2 = LRT   3 = all4
@@ -17,10 +23,15 @@ public class LevelGeneration : MonoBehaviour
     public float minX;
     public float maxX;
     public float minY;
-    private int downCounter;
     public bool stopGeneration;
 
+    private int downCounter;
+    public int iterations;
+
     public LayerMask Room;
+
+    public int maxPlayers;
+
     private void Start()
     {
         int randomStartingPosition = Random.Range(0, startingPositions.Length);
@@ -41,16 +52,19 @@ public class LevelGeneration : MonoBehaviour
         if (direction == 1 || direction == 2) // move right
         {
             moveRight();
+            iterations++;
 
         }
         else if (direction == 3 || direction == 4)//move left
         {
             moveLeft();
+            iterations++;
 
         }
         else if (direction == 5) //move down
         {
             moveDown();
+            iterations++;
         }
 
     }
@@ -108,6 +122,7 @@ public class LevelGeneration : MonoBehaviour
 
         if (transform.position.y > minY)
         {
+            //Collider2D roomDetection = Physics2D.OverlapCircle(transform.position,1,Room);
             Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, Room);
             if (roomDetection.GetComponent<RoomType>().type != 1 && roomDetection.GetComponent<RoomType>().type != 3)
             {
@@ -115,6 +130,7 @@ public class LevelGeneration : MonoBehaviour
                 {
                     roomDetection.GetComponent<RoomType>().roomDestruction();
                     Instantiate(rooms[3], transform.position, Quaternion.identity);
+                    //downCounter = 0;
                 }
                 else
                 {
@@ -132,7 +148,7 @@ public class LevelGeneration : MonoBehaviour
             Vector2 newPosition = new Vector2(transform.position.x, transform.position.y - moveAmount);
             transform.position = newPosition;
 
-            int randomNum = Random.Range(2, 4);
+            int randomNum = Random.Range(2,4);
             Instantiate(rooms[randomNum], transform.position, Quaternion.identity);
 
             direction = Random.Range(1, 6);
@@ -157,4 +173,5 @@ public class LevelGeneration : MonoBehaviour
                 timeBtwRoom -= Time.deltaTime;
         }
     }
+
 }

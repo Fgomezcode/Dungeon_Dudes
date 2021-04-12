@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5700620903229026041}
   - component: {fileID: 8181727903958303511}
-  - component: {fileID: 7645565229303316993}
+  - component: {fileID: 3616840307693865926}
   m_Layer: 8
   m_Name: LRTB room
   m_TagString: Untagged
@@ -89,7 +89,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
---- !u!114 &7645565229303316993
+--- !u!114 &3616840307693865926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 808655237494767823}
   - component: {fileID: 1321868062149831154}
   - component: {fileID: 2697824643390567475}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Warrior_Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 5181501336396295314}
   - component: {fileID: 1502025929}
   - component: {fileID: 684953808957189011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerBulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}

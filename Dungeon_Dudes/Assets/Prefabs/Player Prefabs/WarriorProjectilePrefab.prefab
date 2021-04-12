@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7501042291351717040}
   - component: {fileID: 7501042291351717041}
   - component: {fileID: 656164255995356155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: WarriorProjectilePrefab
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
