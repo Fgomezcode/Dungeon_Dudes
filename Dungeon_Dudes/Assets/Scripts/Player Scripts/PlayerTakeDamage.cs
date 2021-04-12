@@ -11,6 +11,14 @@ public class PlayerTakeDamage : MonoBehaviour
      * FG 3/30
      */
 
+
+    public HealthSlider healthBar;
+    private void Start()
+    {
+        healthBar = FindObjectOfType<HealthSlider>();
+    }
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyClass enemy = collision.gameObject.GetComponent<EnemyClass>();
@@ -27,7 +35,7 @@ public class PlayerTakeDamage : MonoBehaviour
         // declare float health assign the value of health that is assigned in PlayerHealth
         // subtract damage from it
         float health = gameObject.GetComponent<PlayerHealth>().health -= damage;
-
+        healthBar.setHealth(health);
         //console logs when collider is triggered
         Debug.Log("player trigger" + health);
 

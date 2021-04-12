@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyToSpawn:
   - {fileID: 6674402498107108300, guid: 4dd51e18fb6aeda46ae559c93e26a887, type: 3}
-  - {fileID: 6674402498107108300, guid: 4dd51e18fb6aeda46ae559c93e26a887, type: 3}
-  - {fileID: 6674402498107108300, guid: 4dd51e18fb6aeda46ae559c93e26a887, type: 3}
+  - {fileID: 6674402498107108300, guid: bb50122d655050344a372ad1323662c7, type: 3}
+  - {fileID: 6674402498107108300, guid: bb50122d655050344a372ad1323662c7, type: 3}
   enemyChoice: 1
   isRandom: 1
   spawnXmin: -1.64

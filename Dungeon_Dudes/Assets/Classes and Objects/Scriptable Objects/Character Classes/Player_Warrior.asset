@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   maxStamina: 85
-  MoveSpeed: 3
+  staminaRegenRate: 0.85
+  staminaBurnRate: 0.95
+  MoveSpeed: 4
   minMoveSpeed: 2.25
   collisionDamage: 100
   projectileDamage: 0

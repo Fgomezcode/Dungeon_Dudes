@@ -49,4 +49,12 @@ public class ProjectileClass : MonoBehaviour
             Destroy(gameObject,timeToDestroy);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

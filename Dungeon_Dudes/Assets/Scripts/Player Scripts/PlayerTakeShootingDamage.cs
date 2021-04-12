@@ -6,6 +6,13 @@ public class PlayerTakeShootingDamage : MonoBehaviour
     //uses triggers instead of collisions.
     //FG 3/30
 
+    public HealthSlider healthBar;
+
+
+    private void Start()
+    {
+        healthBar = FindObjectOfType<HealthSlider>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "EnemyProjectile")
@@ -24,7 +31,7 @@ public class PlayerTakeShootingDamage : MonoBehaviour
 
         //console logs when collider is triggered
         Debug.Log("Remaining Health: " + health);
-
+        healthBar.setHealth(health);
         //this will destroy the player object when health reaches zero
         if (health <= 0)
         {

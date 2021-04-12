@@ -44,10 +44,7 @@ void Start()
     {
         //This spawns a random enemy it will be assigned a random value based on 
         //the amount of enemies stored.
-       if(isRandom == true)
-        {
-            enemyChoice = Random.Range(0, enemyToSpawn.Length);
-        }
+      
     }
 
     private void Update()
@@ -62,6 +59,10 @@ void Start()
 
     void spawnEnemy()
     {
+        if (isRandom == true)
+        {
+            enemyChoice = Random.Range(0, enemyToSpawn.Length);
+        }
         if (Time.time>nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;

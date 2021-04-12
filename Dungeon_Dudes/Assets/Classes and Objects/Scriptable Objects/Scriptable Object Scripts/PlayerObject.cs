@@ -14,7 +14,8 @@ public class PlayerObject : ScriptableObject
     [Header("Character Stats")]
     public float maxHealth;
     public float maxStamina;
-    
+    public float staminaRegenRate;
+    public float staminaBurnRate;
     public float MoveSpeed;
     public float minMoveSpeed;
 
