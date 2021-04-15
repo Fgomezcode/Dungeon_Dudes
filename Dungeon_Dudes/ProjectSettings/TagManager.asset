@@ -20,14 +20,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Walls
   - 
   - Room
   - Player
   - Enemy
-  - 
-  - 
-  - 
+  - EnemyProjectile
+  - PlayerProjectile
+  - ItemPickup
   - 
   - 
   - 
@@ -50,11 +50,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Walls
+    uniqueID: 596273147
+    locked: 0
   - name: Enemy
     uniqueID: 1808301611
     locked: 0
-  - name: Walls
-    uniqueID: 596273147
+  - name: Item
+    uniqueID: 4027987895
     locked: 0
   - name: Player
     uniqueID: 2512338061

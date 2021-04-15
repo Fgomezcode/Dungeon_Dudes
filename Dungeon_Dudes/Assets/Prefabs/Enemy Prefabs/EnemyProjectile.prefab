@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6916074193510210373}
   - component: {fileID: 1744238102189218530}
   - component: {fileID: 1584993293491043164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyProjectile
   m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileLife: 4.65
-  projectileDamage: 0
+  projectileDamage: 1
 --- !u!58 &1584993293491043164
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

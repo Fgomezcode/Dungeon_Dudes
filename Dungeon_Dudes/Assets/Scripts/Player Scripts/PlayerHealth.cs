@@ -6,10 +6,10 @@ public class PlayerHealth : MonoBehaviour
      * so that i may be accessed without changing the values of scriptable object
      * FG 3/25
      */
-
+    PlayParticle healParticles;
     public HealthSlider healthBar;
     private CharacterClass characterClass;
-    public float maxHealth;
+    public float maxHealth;// assign the maxhealth value to the object this is attached to
     public float health;
 
     void Start()
@@ -24,8 +24,11 @@ public class PlayerHealth : MonoBehaviour
         maxHealth =characterClass.character.maxHealth;
         health = maxHealth;
 
+        // find and access the healthslider UI;
         healthBar = FindObjectOfType<HealthSlider>();
         healthBar.setMaxHealth(characterClass.character.maxHealth);
+
+        healParticles = GetComponentInChildren<PlayParticle>();
 
     }
 
@@ -47,5 +50,32 @@ public class PlayerHealth : MonoBehaviour
         return health;
     }
 
+    //This function will subtract 'damage' from player health every time it is called
+    public void damagePlayer(float damage)
+    {
+        //subtract damage from health.
+        health -= damage;
+        // update the healthbar witht the new health valuel
+        healthBar.setHealth(health);
 
+        //this will destroy the player object when health reaches zero
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    
+    //called by item pick up to heal the player when colliding. 
+    public void healPlayer(float healAmount)
+    {
+        health += healAmount;
+        healParticles.particlePlay();
+        healthBar.setHealth(health);
+        
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
 }

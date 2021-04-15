@@ -22,6 +22,12 @@ public class PlayerObject : ScriptableObject
     [Header("Damage Done to Enemy on Collision")]
     public float collisionDamage;
 
+    [Header("Melee Attack Damage")]
+    public float meleeDamage;
+    public float meleeDelay;
+    public float meleeStaminaCost;
+    public float meleeWallBreakCost;
+
     [Header("Projectile Damage")]
     public float projectileDamage;
     //these values set inventory limits
@@ -41,7 +47,7 @@ public class PlayerObject : ScriptableObject
    // public Sprite playerProjectileSprite;
     public GameObject playerProjectile;
 
-    public string classTag;
-    public Animator animator;
+    //public string classTag;
+    //public Animator animator;
    
 }

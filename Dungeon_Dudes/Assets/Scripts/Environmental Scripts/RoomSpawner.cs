@@ -13,13 +13,13 @@ public class RoomSpawner : MonoBehaviour
 
     void Update()
     {
-        Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 2, whatIsRoom);
+        Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, whatIsRoom);
         if (roomDetection == null && levelGen.stopGeneration == true)
         {
             //spawn random room
             int randomNum = Random.Range(0, levelGen.rooms.Length);
             Instantiate(levelGen.rooms[randomNum], transform.position, Quaternion.identity);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -14,15 +14,14 @@ public class EnemyTakeShootingDamage : MonoBehaviour
         enemyHealth = GetComponent<EnemyClass>().enemyCharacter.maxHealth;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     { 
-        if (collision.tag == "PlayerProjectile")
-        {
-            takeDamage(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage);
-            Destroy(collision.gameObject);
-            Debug.Log(collision.gameObject.GetComponent<ProjectileClass>().projectileDamage +enemyHealth);
-            Debug.Log("enemy shot");
-        }
+        //this can be used to check other triggers
     }
 
     public void takeDamage(float damage)

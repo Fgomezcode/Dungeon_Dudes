@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: d0ac01eb68b1a7e4aafafc4c97e5d54c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5022700491382067453
+    second: SmoothBlocks_0
+  - first:
+      213: 4590783680419560328
+    second: SmoothBlocks_1
+  - first:
+      213: 295215083507428694
+    second: SmoothBlocks_2
+  - first:
+      213: 1519621599071396729
+    second: SmoothBlocks_3
+  - first:
+      213: 7310255065023024769
+    second: SmoothBlocks_4
+  - first:
+      213: 8673724130553526011
+    second: SmoothBlocks_5
+  - first:
+      213: 7383577015680912282
+    second: SmoothBlocks_6
+  - first:
+      213: -926152377258947703
+    second: SmoothBlocks_7
+  - first:
+      213: 6931080711539910456
+    second: SmoothBlocks_8
+  - first:
+      213: 8080268156692567340
+    second: SmoothBlocks_9
+  - first:
+      213: 4879628935465292706
+    second: SmoothBlocks_10
+  - first:
+      213: 6758252704155767681
+    second: SmoothBlocks_11
+  - first:
+      213: -6593816693853152542
+    second: SmoothBlocks_12
+  - first:
+      213: -8760334790243854417
+    second: SmoothBlocks_13
+  - first:
+      213: -3944554710347261762
+    second: SmoothBlocks_14
+  - first:
+      213: 1323418904396109085
+    second: SmoothBlocks_15
+  - first:
+      213: -1201378512045420875
+    second: SmoothBlocks_16
+  - first:
+      213: 141746417476067104
+    second: SmoothBlocks_17
+  - first:
+      213: 1869696565831655444
+    second: SmoothBlocks_18
+  - first:
+      213: -5687351405282039332
+    second: SmoothBlocks_19
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SmoothBlocks_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 632
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df0120a4c7734b540800000000000000
+      internalID: 5022700491382067453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 624
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b71103f6db5bf30800000000000000
+      internalID: 4590783680419560328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 616
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d2cc8ed80d81400800000000000000
+      internalID: 295215083507428694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97369a50bc7c61510800000000000000
+      internalID: 1519621599071396729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_4
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e8230104e337560800000000000000
+      internalID: 7310255065023024769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6706134224f5870800000000000000
+      internalID: 8673724130553526011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b46670d2cb77660800000000000000
+      internalID: 7383577015680912282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bc891e155a523f0800000000000000
+      internalID: -926152377258947703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837e5e84f25203060800000000000000
+      internalID: 6931080711539910456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c259f81d311e22070800000000000000
+      internalID: 8080268156692567340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_10
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a35026d9ace7b340800000000000000
+      internalID: 4879628935465292706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183178517032acd50800000000000000
+      internalID: 6758252704155767681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea97d807ae0e74a0800000000000000
+      internalID: -6593816693853152542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 608
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7d40a2ce90d6680800000000000000
+      internalID: -8760334790243854417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_14
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 600
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb858acd3602249c0800000000000000
+      internalID: -3944554710347261762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_15
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 600
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1511955b7abd5210800000000000000
+      internalID: 1323418904396109085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_16
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 600
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5beceb4cb98d35fe0800000000000000
+      internalID: -1201378512045420875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 592
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f58dd9d9597f100800000000000000
+      internalID: 141746417476067104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 592
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410e92cde1f72f910800000000000000
+      internalID: 1869696565831655444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SmoothBlocks_19
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 592
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9685f97087211b0800000000000000
+      internalID: -5687351405282039332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

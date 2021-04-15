@@ -18,8 +18,12 @@ MonoBehaviour:
   staminaBurnRate: 0.95
   MoveSpeed: 4
   minMoveSpeed: 2.25
-  collisionDamage: 100
-  projectileDamage: 0
+  collisionDamage: 0.75
+  meleeDamage: 3
+  meleeDelay: 0.43
+  meleeStaminaCost: 1
+  meleeWallBreakCost: 20
+  projectileDamage: 2
   keys: 2
   mana: 3
   playerSprite: {fileID: 21300000, guid: 307c6dbf57efd9c4ca5271e123569c9c, type: 3}

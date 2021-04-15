@@ -76,16 +76,16 @@ public class LevelGeneration : MonoBehaviour
 
     private void moveRight()
     {
-        if (transform.position.x <= maxX)
+        if (transform.position.x < maxX)
         {
-            
+            downCounter = 0;
             Vector2 newPosition = new Vector2(transform.position.x + moveAmount, transform.position.y);
             transform.position = newPosition;
 
             int randomNum = Random.Range(0, rooms.Length);
             Instantiate(rooms[randomNum], transform.position, Quaternion.identity);
 
-            direction = Random.Range(1, 3);// aftermoving right the direction is to keep going right until it goes down
+            direction = Random.Range(1, 6);// aftermoving right the direction is to keep going right until it goes down
 
             if (direction == 3)
             {
@@ -104,9 +104,9 @@ public class LevelGeneration : MonoBehaviour
 
     private void moveLeft()
     {
-        if (transform.position.x >= minX)
+        if (transform.position.x > minX)
         {
-            
+            downCounter = 0;
             Vector2 newPosition = new Vector2(transform.position.x - moveAmount, transform.position.y);
             transform.position = newPosition;
 
@@ -129,13 +129,13 @@ public class LevelGeneration : MonoBehaviour
         {
             
             Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 2, Room);
+
             if (roomDetection.GetComponent<RoomType>().type != 1 && roomDetection.GetComponent<RoomType>().type != 3)
             {
                 if (downCounter >= 2)
                 {
                     roomDetection.GetComponent<RoomType>().roomDestruction();
                     Instantiate(rooms[3], transform.position, Quaternion.identity);
-                    downCounter = 0;
                 }
                 else
                 {

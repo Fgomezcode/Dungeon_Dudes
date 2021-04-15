@@ -43,8 +43,7 @@ public class EnemySpawner : MonoBehaviour
 void Start()
     {
         //This spawns a random enemy it will be assigned a random value based on 
-        //the amount of enemies stored.
-      
+        //the amount of enemies stored. 
     }
 
     private void Update()
@@ -53,8 +52,6 @@ void Start()
         {
             Invoke("spawnEnemy", spawnRate);
         }
-
-        //InvokeRepeating("spawnEnemy", 1, 5f);
     }
 
     void spawnEnemy()
@@ -73,5 +70,4 @@ void Start()
             --maxEnemies;
         }
     }
-
 }

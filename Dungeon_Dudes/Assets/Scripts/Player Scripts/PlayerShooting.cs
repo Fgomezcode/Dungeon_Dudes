@@ -20,24 +20,7 @@ public class PlayerShooting : MonoBehaviour
 
     private void Awake()
     {
-        // find and access the components needed and assign appropriate values
-        //access the projectile stats throught the character class,
-        // projectileStats = gameObject.GetComponent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
-        projectileStats = GetComponentInParent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
-        //access the player character class
-        character = GetComponentInParent<CharacterClass>().character;
-
-        // assign the projectile prefab
-        projectilePrefab = character.playerProjectile;
-
-        // assign the projectile speed
-        projectileSpeed = projectilePrefab.GetComponent<ProjectileClass>().projectileStats.playerProjectileSpeed;
-       
-        // find and assign the firepoint by searching through the players child objects
-        firePoint = GetComponentInChildren<PlayerAiming>();
-        
-        //make timer and reload the same so player can shoot on spawn
-        projectileStats.playerProjectileTimer = projectileStats.playerProjectileReload;
+        cacheStats();
     }
 
     void Update()
@@ -74,13 +57,36 @@ public class PlayerShooting : MonoBehaviour
 
     void checkFire()
     {
+       
         //check for player input
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Input.GetButton("Fire2"))
         {
             // call the shoot function
             Shoot();
         }
         //start the reload timer
         reloadTimer();
+    }
+    
+    void cacheStats()
+    {
+        // find and access the components needed and assign appropriate values
+        //access the projectile stats throught the character class,
+        // projectileStats = gameObject.GetComponent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
+        projectileStats = GetComponentInParent<CharacterClass>().character.playerProjectile.GetComponent<ProjectileClass>().projectileStats;
+        //access the player character class
+        character = GetComponentInParent<CharacterClass>().character;
+
+        // assign the projectile prefab
+        projectilePrefab = character.playerProjectile;
+
+        // assign the projectile speed
+        projectileSpeed = projectilePrefab.GetComponent<ProjectileClass>().projectileStats.playerProjectileSpeed;
+
+        // find and assign the firepoint by searching through the players child objects
+        firePoint = GetComponentInChildren<PlayerAiming>();
+
+        //make timer and reload the same so player can shoot on spawn
+        projectileStats.playerProjectileTimer = projectileStats.playerProjectileReload;
     }
 }

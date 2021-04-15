@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7501042291351717040}
   - component: {fileID: 7501042291351717041}
   - component: {fileID: 3700327939948527408}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RangerProjectilePrefab
   m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}

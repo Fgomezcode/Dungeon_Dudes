@@ -47,17 +47,20 @@ public class EnemyObject : ScriptableObject
     [SerializeField]
     public Sprite enemyProjectileSprite;
 
-    [Header("Loot Drops")]
-    // loot pool 1D array that WILL hold item scriptable objects - guns, health, pwr up, money
-    public int[] lootPool;
-
     [Header("Loot Type")]
     //bool values to open lootpools
     public bool isHealthDrop = false;
     public bool isManaDrop = false;
     public bool isKeyDrop = false;
 
+    [Header("Loot Drops")]
+    // loot pool 1D array that WILL hold item scriptable objects - guns, health, pwr up, money
+    public GameObject[] healthPool;
+    public GameObject[] manaPool;
+    public GameObject[] keyPool;
+
     [Header("Spawn Enemy On Death")]
     public bool isSpawnMore = false;
- 
+    public int howMany;
+    public GameObject[] enemiesOnDeath;
 }

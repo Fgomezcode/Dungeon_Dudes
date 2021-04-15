@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
 
     // access sprite to flip it
     private SpriteRenderer playerSprite;
+    private Animator animator;
     //this will let us store the values from user input
     //in the x and y coor of this 2Directional vector
     public Vector2 movement;
@@ -48,14 +49,9 @@ public class Movement : MonoBehaviour
     //this is best used for user input, is framerate dependent.
     void Update()
     {
-        //both of these return values between -1 and 1, 0 being neutral -1, is down and left, 1 is right and up respectively.
 
-        // assign the Horiz value to Vector2.x (movement.x) - uses Horizontal Unity keyword
-        movement.x = Input.GetAxisRaw("Horizontal");
-        if (movement.x < 0){ playerSprite.flipX = true; }
 
-        // assig the Vert value to Vector2.y (movement.y) - uses Vertical Unity Keyword
-        movement.y = Input.GetAxisRaw("Vertical");
+        flipSprite();
 
         movingCheck();
         hideStaminaBar();
@@ -66,9 +62,14 @@ public class Movement : MonoBehaviour
     // is further smoothed  by multiplying by Time.fixedDeltaTime
     private void FixedUpdate()
     {
+        applyMovement();
+        sprintCheck();
+    }
+
+    void applyMovement()
+    {
         //acces the MovePosition function in RigidBody2D class. Pass players current position and add the values of our Vector2 that is multiplied by moveSpeed and Time.fixedDeltaTime 
         playerBody.MovePosition(playerBody.position + movement * characterClass.character.minMoveSpeed * Time.fixedDeltaTime);
-        sprintCheck();
     }
 
     void regenStamina()
@@ -117,18 +118,60 @@ public class Movement : MonoBehaviour
         if (movement.x != 0 || movement.y != 0)
         {
             isMoving = true;
+            animator.SetBool("isRunning", true);
         }
         else
         {
             isMoving = false;
+            animator.SetBool("isRunning", false);
         }
     }
 
+    public void staminaCost(float cost)
+    {
+        playerStamina -= cost;
+        staminaDisplay.setStamina(playerStamina);
+    }
+
+    //will flip the sprite to point to face the mouse if the player is standing still
+    //or will flip it to face movement direction
+    void flipSprite()
+    {
+        //both of these return values between -1 and 1, 0 being neutral -1, is down and left, 1 is right and up respectively.
+
+        // assign the Horiz value to Vector2.x (movement.x) - uses Horizontal Unity keyword
+        movement.x = Input.GetAxisRaw("Horizontal");
+
+        if (movement.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, -3);
+        }
+        if (movement.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, -3);
+        }
+        // assig the Vert value to Vector2.y (movement.y) - uses Vertical Unity Keyword
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if(!isMoving)
+        {
+            if(mousePosition.x < gameObject.transform.position.x)
+            {
+                transform.localScale = new Vector3(-1, 1, -3);
+            }
+            if(mousePosition.x > gameObject.transform.position.x)
+            {
+                transform.localScale = new Vector3(1, 1, -3);
+            }
+        }
+    }
     void cacheRefs()
     {
         //assign the RigidBody2D, sprite, class, stamindabar, access player stamina
         playerBody = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         characterClass = GetComponent<CharacterClass>();
         staminaDisplay = FindObjectOfType<StaminaSlider>();
         playerStamina = characterClass.character.maxStamina;
@@ -136,4 +179,5 @@ public class Movement : MonoBehaviour
         //set the stamina bar to display the maximum player stamina
         staminaDisplay.setMaxStamina(playerStamina);
     }
+    
 }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5889cd79064b7d3439c36882107ab562, type: 3}
   m_Name: WarriorProjectile
   m_EditorClassIdentifier: 
-  playerProjectileSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  playerProjectileSpeed: 9
-  playerProjectileReload: 0.22
-  playerProjectileTimer: 0.22357021
+  playerProjectileSprite: {fileID: -8154498446710104070, guid: 07453dbbd50d8b841a13c181f71dd281, type: 3}
+  playerProjectileSpeed: 12
+  playerProjectileReload: 0.35
+  playerProjectileTimer: 0.35
   playerProjectileBaseDamage: 5
   playerProjectileMaxDamage: 10
-  playerProjectileLife: 1.63
+  playerProjectileLife: 1.125

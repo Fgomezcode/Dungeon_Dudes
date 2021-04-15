@@ -17,7 +17,7 @@ MonoBehaviour:
   patrolSpeed: 2
   baseDamage: 2
   maxDamage: 3
-  projectileDamage: 0
+  projectileDamage: 1
   canShoot: 0
   lineOfSight: 10
   aggroLineOfSight: 0
@@ -28,8 +28,11 @@ MonoBehaviour:
   fireRate: 0
   enemySprite: {fileID: 21300000, guid: 98dcb1e2db86ac149b663dae83a694d9, type: 3}
   enemyProjectileSprite: {fileID: 0}
-  lootPool: 
   isHealthDrop: 0
   isManaDrop: 0
   isKeyDrop: 0
+  healthPool: []
+  manaPool: []
+  keyPool: []
   isSpawnMore: 0
+  enemiesOnDeath: []

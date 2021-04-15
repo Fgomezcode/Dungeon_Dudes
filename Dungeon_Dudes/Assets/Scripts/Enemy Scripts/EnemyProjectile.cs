@@ -22,16 +22,20 @@ public class EnemyProjectile : MonoBehaviour
 
     void Start()
     {
-        
         enemyCharacter = FindObjectOfType<EnemyClass>().enemyCharacter;
         projectileSpeed = enemyCharacter.projectileSpeed;
         projectileLife = enemyCharacter.projectileLife;
         projectileDamage = enemyCharacter.projectileDamage;
         target = GameObject.FindGameObjectWithTag("Player");
 
+        shootTowardPlayer();
+    } 
+
+    private void shootTowardPlayer()
+    {
         projectileBody = GetComponent<Rigidbody2D>();
         Vector2 moveDirection = (target.transform.position - transform.position).normalized * projectileSpeed;
         projectileBody.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, projectileLife);
-    } 
+    }
 }
