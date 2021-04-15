@@ -28,13 +28,31 @@ public class ItemClass : MonoBehaviour
 
         if (itemClass.isKey && player)
         {
-            Debug.LogError("PLAYER GOT KEY");
+            GameManager hud = FindObjectOfType<GameManager>();
+            if(hud.keyAmount< player.character.keys)
+            {
+                hud.keyAmount++;
+                hud.displayKeys();
+                hideItem();
+            }      
             hideItem();
+            Debug.LogError("PLAYER GOT KEY");     
         }
+
         if (itemClass.isMana && player)
         {
-            Debug.LogError("PLAYER GOT MANA");
+            GameManager hud = FindObjectOfType<GameManager>();
+
+            if(hud.manaAmount < player.character.mana)
+            {
+                hud.manaAmount++;
+                hud.displayMana();
+                hideItem();
+            }
+           
             hideItem();
+            Debug.LogError("PLAYER GOT MANA");
+
         }
     }
 
