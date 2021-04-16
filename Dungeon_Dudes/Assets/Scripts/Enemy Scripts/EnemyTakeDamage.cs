@@ -7,8 +7,10 @@ public class EnemyTakeDamage : MonoBehaviour
      */
 
     //public PlayParticle enemyParticles;
+    
+    public bool takesProjectileDamage;
     EnemyClass enemyStats;
-    public float enemyHealth;
+    private float enemyHealth;
 
     PlayParticle enemyParticle;
 
@@ -17,6 +19,8 @@ public class EnemyTakeDamage : MonoBehaviour
         enemyStats = GetComponent<EnemyClass>();
         enemyHealth = enemyStats.enemyCharacter.maxHealth;
         enemyParticle = gameObject.GetComponentInChildren<PlayParticle>();
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,12 +33,12 @@ public class EnemyTakeDamage : MonoBehaviour
         }
 
         ProjectileClass playerProjectile = collision.collider.GetComponent<ProjectileClass>();
-        if (playerProjectile)
+        if (playerProjectile && takesProjectileDamage)
         {
             takeDamage(playerProjectile.projectileDamage) ;
-           // Destroy(collision.gameObject); projectile is destroyed by projectile script
             Debug.Log("Enemy shot!!");
         }
+        
     }
 
     public void takeDamage(float damage)

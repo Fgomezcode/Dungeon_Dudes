@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc33fc75ec942141bac9a9fd0f3b8a0, type: 3}
+  m_Name: TeleportingEnemy
+  m_EditorClassIdentifier: 
+  maxHealth: 4
+  chaseSpeed: 1
+  patrolSpeed: 1.81
+  baseDamage: 2
+  maxDamage: 0
+  projectileDamage: 0
+  canShoot: 0
+  lineOfSight: 0
+  aggroLineOfSight: 0
+  projectile: {fileID: 0}
+  shootingRange: 0
+  projectileSpeed: 0
+  projectileLife: 0
+  fireRate: 0
+  enemySprite: {fileID: 21300000, guid: 331ea234ca9752f4b82f04293ce6cc6c, type: 3}
+  enemyProjectileSprite: {fileID: 0}
+  isHealthDrop: 0
+  isManaDrop: 0
+  isKeyDrop: 0
+  healthPool: []
+  manaPool: []
+  keyPool: []
+  isSpawnMore: 0
+  howMany: 0
+  enemiesOnDeath: []

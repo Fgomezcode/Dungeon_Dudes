@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2426440025021652900}
   - component: {fileID: 2426440025021652903}
   - component: {fileID: 2426440025021652901}
-  - component: {fileID: 2426440025021652902}
   - component: {fileID: 2426440025021652904}
+  - component: {fileID: 337545655}
+  - component: {fileID: 337545656}
   m_Layer: 10
   m_Name: BlobEnemy
   m_TagString: Enemy
@@ -157,28 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ffb793a9294b141881a3062fdecfde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 0
-  enemyParticle: {fileID: 8612001544586650690, guid: e40f2a6059773604cb3a6219da0576c6, type: 3}
---- !u!114 &2426440025021652902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2426440025021652905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30907901ea0209443b3542a38066822f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lineOfsight: 0
-  aggroLineOfSight: 0
-  shootingRange: 0
-  fireRate: 0
-  enemyProjectile: {fileID: 0}
-  enemyProjectileParent: {fileID: 0}
-  playerPosition: {fileID: 0}
-  enemySpawnerPosition: {fileID: 0}
+  takesProjectileDamage: 1
 --- !u!114 &2426440025021652904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +172,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCharacter: {fileID: 11400000, guid: 86f2b18af6f9b854597c909a28a28e4b, type: 2}
+--- !u!114 &337545655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426440025021652905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0fd3060ad00fc469daca2204393e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 0}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  player: {fileID: 0}
+  startingPerimeter: 4.5
+  chasePerimeter: 4.5
+  aggroPerimeter: 5.37
+--- !u!114 &337545656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2426440025021652905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06d235a56bfc934192312c570ddc7ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  patrolMinX: -1
+  patrolMaxX: 1
+  patrolMinY: -1
+  patrolMaxY: 1
+  patrolTarget: {fileID: 5648100036687136070, guid: 9a5159d80f3db6e46a331c236bc9888a, type: 3}
+  startWaitTime: 0.8
 --- !u!1001 &3228856918578627966
 PrefabInstance:
   m_ObjectHideFlags: 0

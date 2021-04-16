@@ -15,7 +15,7 @@ public class EnemyAttackStates : MonoBehaviour
      * FG 3/30
      */
 
-
+    EnemyPatrol patrol;
     // refactor this into shooting enemy script, chasing enemy script and make an enemy class/prefab for every enemy type
     [Header("Enemy Move Speed")]
     private float moveSpeed;
@@ -56,6 +56,7 @@ public class EnemyAttackStates : MonoBehaviour
         findTransform();
         //pass the ref. because null will be caught a little after the game loads, with out having to Invoke
         findTarget(player);
+       
     }
     
     //FUNCTIONS
