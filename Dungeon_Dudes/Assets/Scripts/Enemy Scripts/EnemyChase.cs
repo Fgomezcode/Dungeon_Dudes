@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyChase : MonoBehaviour
@@ -26,8 +24,7 @@ public class EnemyChase : MonoBehaviour
     }
 
     public void chasePlayer()
-    {
-       
+    {    
         Collider2D playerCheck = Physics2D.OverlapCircle(transform.position, chasePerimeter, playerLayer);
 
         if (playerCheck)
@@ -42,7 +39,6 @@ public class EnemyChase : MonoBehaviour
 
             patrol.activePatrol();
         }
-
     }
 
     private void OnDrawGizmosSelected()

@@ -7,20 +7,21 @@ public class EnemyTakeDamage : MonoBehaviour
      */
 
     //public PlayParticle enemyParticles;
-    
-    public bool takesProjectileDamage;
+    PlayerHealth playerHealth;
     EnemyClass enemyStats;
+    GameManager gameManager;
+    public bool takesProjectileDamage;
     private float enemyHealth;
 
     PlayParticle enemyParticle;
 
     private void Start()
     {
+        playerHealth = FindObjectOfType<PlayerHealth>();
         enemyStats = GetComponent<EnemyClass>();
         enemyHealth = enemyStats.enemyCharacter.maxHealth;
         enemyParticle = gameObject.GetComponentInChildren<PlayParticle>();
-
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,25 +30,30 @@ public class EnemyTakeDamage : MonoBehaviour
         if(player )
         {
             takeDamage(player.character.collisionDamage);
-            Debug.Log("Collided with enemy");
         }
 
         ProjectileClass playerProjectile = collision.collider.GetComponent<ProjectileClass>();
         if (playerProjectile && takesProjectileDamage)
         {
             takeDamage(playerProjectile.projectileDamage) ;
-            Debug.Log("Enemy shot!!");
-        }
-        
+            
+        }    
     }
+
+
 
     public void takeDamage(float damage)
     {
         enemyHealth -= damage;
-        Debug.LogError(enemyHealth);
+        
         if (enemyHealth <= 0)
         {
-            
+            // there is a kill component it will kill - destroy parent obj
+            Destroyer kill = GetComponentInParent<Destroyer>();
+            if(kill)
+            {
+                kill.kill();
+            }
             lootCheck();//buuild loot system into own script
             enemyDeath();
         }
@@ -164,7 +170,8 @@ public class EnemyTakeDamage : MonoBehaviour
         {
             return;
         }
-
+        gameManager.playerScore += enemyStats.enemyCharacter.pointValue;
+        playerHealth.healPlayer(enemyStats.enemyCharacter.pointValue);
         Destroy(gameObject, GetComponentInChildren<ParticleSystem>().main.duration);
     }
 }

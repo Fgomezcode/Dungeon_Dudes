@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc33fc75ec942141bac9a9fd0f3b8a0, type: 3}
   m_Name: BlobEnemy
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 5
   chaseSpeed: 2.97
   patrolSpeed: 1.88
   baseDamage: 2
   maxDamage: 0
-  pointValue: 0
+  pointValue: 20
   projectileDamage: 0
   canShoot: 0
   lineOfSight: 10
@@ -43,7 +43,6 @@ MonoBehaviour:
   keyPool:
   - {fileID: 5870595016097438845, guid: 870fb0ad2b6da45ada45b6cc2a7c7177, type: 3}
   isSpawnMore: 1
-  howMany: 5
+  howMany: 3
   enemiesOnDeath:
-  - {fileID: 5624450611788779388, guid: e5cc39b54a471294a815330b3fbacd64, type: 3}
-  - {fileID: 5624450611788779388, guid: e5cc39b54a471294a815330b3fbacd64, type: 3}
+  - {fileID: 5495034371216451043, guid: 0c0c5009165f28940bc934f3122e4a73, type: 3}

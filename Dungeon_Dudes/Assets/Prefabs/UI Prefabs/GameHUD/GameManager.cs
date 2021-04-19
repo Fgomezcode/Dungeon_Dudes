@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+    public int playerScore;
+    public int currentLevel;
+
     public int keyAmount;
     public int manaAmount;
 
@@ -13,14 +16,20 @@ public class GameManager : MonoBehaviour
     public Image mana2;
     public Image mana3;
 
-    
-
+    public Text scoreDisplay;
+    public Text levelDisplay;
     private void Start()
     {
+        updateLevel();
+        updateScore();
         displayKeys();
         displayMana();
     }
 
+    private void Update()
+    {
+        updateScore();
+    }
     public void displayKeys()
     {
         if(keyAmount == 0)
@@ -72,4 +81,15 @@ public class GameManager : MonoBehaviour
             return;
         }
     }
+
+    public void updateScore()
+    {
+        scoreDisplay.text = playerScore.ToString();
+    }
+
+    public void updateLevel()
+    {
+        levelDisplay.text = "lev: " + currentLevel.ToString(); 
+    }
+
 }

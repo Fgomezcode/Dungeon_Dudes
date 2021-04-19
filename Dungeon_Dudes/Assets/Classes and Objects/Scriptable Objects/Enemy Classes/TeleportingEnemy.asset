@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: TeleportingEnemy
   m_EditorClassIdentifier: 
   maxHealth: 4
-  chaseSpeed: 1
-  patrolSpeed: 1.81
+  chaseSpeed: 2.53
+  patrolSpeed: 0.75
   baseDamage: 2
   maxDamage: 0
+  pointValue: 30
   projectileDamage: 0
   canShoot: 0
   lineOfSight: 0

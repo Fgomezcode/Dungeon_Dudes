@@ -97,7 +97,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1782629235
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -8154498446710104070, guid: 07453dbbd50d8b841a13c181f71dd281, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -322,6 +322,14 @@ PrefabInstance:
     - target: {fileID: 1359146773732203517, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
       propertyPath: m_Name
       value: ProjectileTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950984829367505933, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950984829367505933, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7994732867295570117, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
       propertyPath: m_RootOrder

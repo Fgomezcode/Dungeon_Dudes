@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   maxStamina: 85
-  staminaRegenRate: 0.85
+  staminaRegenRate: 1
   staminaBurnRate: 0.95
+  staminaDodgeCost: 9
+  dodgeDistance: 0.965
   MoveSpeed: 4
   minMoveSpeed: 2.25
   collisionDamage: 0.75
@@ -28,5 +30,3 @@ MonoBehaviour:
   mana: 3
   playerSprite: {fileID: 21300000, guid: 307c6dbf57efd9c4ca5271e123569c9c, type: 3}
   playerProjectile: {fileID: 7501042291351717043, guid: a84264ed56d26cb49832d43e5a432f72, type: 3}
-  classTag: Warrior
-  animator: {fileID: 0}

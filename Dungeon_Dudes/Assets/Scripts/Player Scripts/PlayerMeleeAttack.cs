@@ -15,7 +15,7 @@ public class PlayerMeleeAttack : MonoBehaviour
     public LayerMask collisionLayers;
 
     CharacterClass character;
-    Movement playerStamina;
+    PlayerStamina playerStamina;
     public float setTimeBetweenAttack;
     public float timeBetweenAttack;
     
@@ -53,7 +53,7 @@ public class PlayerMeleeAttack : MonoBehaviour
             }
             else 
             {
-                Debug.LogError("NEED MORE STAMINA");
+                
             }
         }
         playerStamina.staminaCost(character.character.meleeStaminaCost);
@@ -86,7 +86,7 @@ public class PlayerMeleeAttack : MonoBehaviour
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterClass>();
         setTimeBetweenAttack = character.character.meleeDelay;
-        playerStamina = GetComponent<Movement>();
+        playerStamina = GetComponent<PlayerStamina>();
     }
 
     private void OnDrawGizmosSelected()

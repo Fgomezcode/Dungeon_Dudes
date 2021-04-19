@@ -35,7 +35,7 @@ public class TeleportFunction : MonoBehaviour
         if (randomSpot != temp)
         {
             Vector2 newlocation = new Vector2(teleportSpots[randomSpot].x, teleportSpots[randomSpot].y);
-            gameObject.transform.position = newlocation;
+            gameObject.transform.localPosition = newlocation;
         }
         else
         {
