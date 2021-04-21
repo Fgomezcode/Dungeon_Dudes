@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: 0
+  currentLevel: 0
   keyAmount: 0
   manaAmount: 0
   key1: {fileID: 4115291960158408826}
@@ -125,6 +126,7 @@ MonoBehaviour:
   mana2: {fileID: 4115291959717254632}
   mana3: {fileID: 4115291959651662027}
   scoreDisplay: {fileID: 6887113391976004027}
+  levelDisplay: {fileID: 0}
 --- !u!1 &4115291959390793668
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +169,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 750.5, y: -487}
-  m_SizeDelta: {x: -1473.3842, y: -977.80884}
+  m_AnchoredPosition: {x: 815, y: -239}
+  m_SizeDelta: {x: -946.512, y: -1360.9014}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4115291959390793665
 CanvasRenderer:

@@ -38,6 +38,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3201191655221020213}
     m_Modifications:
+    - target: {fileID: 4159073381254041377, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
+      propertyPath: m_Name
+      value: DodgeParticle
+      objectReference: {fileID: 0}
     - target: {fileID: 5181501335462257240, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
       propertyPath: m_CollisionDetection
       value: 1
@@ -102,6 +106,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5181501335462257245, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5181501335462257246, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
       propertyPath: m_Name
       value: Warrior_Player
@@ -118,6 +126,10 @@ PrefabInstance:
       propertyPath: startIFRAMES
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 9021418638649571869, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05484d7faf5d12847853f782e239bbb4, type: 3}
 --- !u!4 &4959071067807835873 stripped

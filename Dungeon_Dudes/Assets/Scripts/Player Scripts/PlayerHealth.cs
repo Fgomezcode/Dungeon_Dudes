@@ -78,4 +78,16 @@ public class PlayerHealth : MonoBehaviour
             health = maxHealth;
         }
     }
+
+    public void healPlayerOnKill(float healAmount)
+    {
+        health += healAmount;
+        //healParticles.particlePlay();
+        healthBar.setHealth(health);
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
 }

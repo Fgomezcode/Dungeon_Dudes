@@ -171,7 +171,9 @@ public class EnemyTakeDamage : MonoBehaviour
             return;
         }
         gameManager.playerScore += enemyStats.enemyCharacter.pointValue;
-        playerHealth.healPlayer(enemyStats.enemyCharacter.pointValue);
+        //heal the player based on point value 
+        playerHealth.healPlayerOnKill(enemyStats.enemyCharacter.pointValue);
+
         Destroy(gameObject, GetComponentInChildren<ParticleSystem>().main.duration);
     }
 }
