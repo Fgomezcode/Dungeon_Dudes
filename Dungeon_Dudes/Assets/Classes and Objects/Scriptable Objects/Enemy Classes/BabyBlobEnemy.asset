@@ -17,6 +17,7 @@ MonoBehaviour:
   patrolSpeed: 3
   baseDamage: 1
   maxDamage: 0
+  pointValue: 10
   projectileDamage: 0
   canShoot: 0
   lineOfSight: 10

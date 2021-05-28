@@ -16,6 +16,8 @@ public class PlayerObject : ScriptableObject
     public float maxStamina;
     public float staminaRegenRate;
     public float staminaBurnRate;
+    public float staminaDodgeCost;
+    public float dodgeDistance;
     public float MoveSpeed;
     public float minMoveSpeed;
 

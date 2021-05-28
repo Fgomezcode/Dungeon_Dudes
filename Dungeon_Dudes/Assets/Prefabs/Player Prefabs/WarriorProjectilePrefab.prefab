@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &7501042291351717040
 SpriteRenderer:
@@ -257,6 +257,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7501042291351717042}
     m_Modifications:
+    - target: {fileID: 2262713079475430050, guid: 8133d4cbb3b26e24abf3211e4b2c4c68, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262713079475430050, guid: 8133d4cbb3b26e24abf3211e4b2c4c68, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262713079475430050, guid: 8133d4cbb3b26e24abf3211e4b2c4c68, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1782629235
+      objectReference: {fileID: 0}
     - target: {fileID: 5896133834508727161, guid: 8133d4cbb3b26e24abf3211e4b2c4c68, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -322,6 +334,14 @@ PrefabInstance:
     - target: {fileID: 1359146773732203517, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
       propertyPath: m_Name
       value: ProjectileTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950984829367505933, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950984829367505933, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7994732867295570117, guid: cd0feb1b2c993e841991c105e7be0dab, type: 3}
       propertyPath: m_RootOrder

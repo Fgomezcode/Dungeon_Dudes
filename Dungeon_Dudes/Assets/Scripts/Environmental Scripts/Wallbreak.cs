@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Wallbreak : MonoBehaviour
 {
     // Start is called before the first frame update
     public float wallhealth;
-
+    public bool Breakable;
     
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -15,8 +13,8 @@ public class Wallbreak : MonoBehaviour
         //access the players stats
         CharacterClass player = collision.collider.GetComponent<CharacterClass>();
         //access the player current stamina
-        Movement movingPlayer = collision.collider.GetComponent <Movement>();
-        if (player)
+        PlayerStamina movingPlayer = collision.collider.GetComponent <PlayerStamina>();
+        if (player && Breakable)
         {   
             //if the player has more than half of their stamina and they are sprinting they 
             //will do 4 times the wall damage, at the cost of half of their current stamina
@@ -35,13 +33,18 @@ public class Wallbreak : MonoBehaviour
             //just to check collision
             Color tempColor = gameObject.GetComponent<SpriteRenderer>().color;
             tempColor.a = 0.85f;
+            collision.collider.GetComponent<SpriteRenderer>().sortingOrder =3 ;
             //gameObject.GetComponent<SpriteRenderer>().color = tempColor;
         }
+
+
+        
+        
 
         //this is if the player shoots the wall
         //cache ref to projectile class
         ProjectileClass playerProjectile = collision.collider.GetComponent<ProjectileClass>();
-        if (playerProjectile)
+        if (playerProjectile && Breakable)
         {
             //wall health will take 1/4 the damage of the players ranged attack
             wallhealth -= (playerProjectile.projectileDamage*.25f);
@@ -55,7 +58,7 @@ public class Wallbreak : MonoBehaviour
 
         //this is if the enemy shoots the walls.
         EnemyProjectile enemyProjectile = collision.collider.GetComponent<EnemyProjectile>();
-        if(enemyProjectile)
+        if(enemyProjectile && Breakable)
         {
             wallhealth -= (enemyProjectile.projectileDamage / 2);
             //turn of collider -- same as above
@@ -77,9 +80,13 @@ public class Wallbreak : MonoBehaviour
     //this function destroys the wall when it has no health remaining
     void destroyWall()
     {
-        if (wallhealth <= 0)
+
+       if(Breakable)
         {
-            Destroy(gameObject);
+            if (wallhealth <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void wallDamage(float damage)

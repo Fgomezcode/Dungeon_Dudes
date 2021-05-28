@@ -13,6 +13,11 @@ TagManager:
   - Ranger
   - Wall
   - Enemy
+  - StaminaHUD
+  - StaminaFill
+  - StaminaBorder
+  - StaminBorder
+  - GameManager
   layers:
   - Default
   - TransparentFX

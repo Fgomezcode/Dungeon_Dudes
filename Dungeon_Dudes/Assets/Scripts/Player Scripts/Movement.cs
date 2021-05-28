@@ -31,12 +31,10 @@ public class Movement : MonoBehaviour
 
     //access characterclass so that stamina can be accessed
     public CharacterClass characterClass;
-
+    public PlayerStamina stamina;
+    public PlayerDodge dodge;
     //These control the stamina display
-    public float playerStamina;
-    public StaminaSlider staminaDisplay;
-    public Image sliderFill;
-    public Image sliderBorder;
+
     //This function finds the RigidBody2D of the object this 
     //script is attached to as soon as the object is spawned.
 
@@ -49,13 +47,9 @@ public class Movement : MonoBehaviour
     //this is best used for user input, is framerate dependent.
     void Update()
     {
-
-
         flipSprite();
-
         movingCheck();
-        hideStaminaBar();
-        
+        dodge.playerDodge();
     }
 
     //this is best used for physics, is called 50times per frame,
@@ -63,54 +57,13 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         applyMovement();
-        sprintCheck();
+        stamina.sprintCheck();
     }
 
     void applyMovement()
     {
         //acces the MovePosition function in RigidBody2D class. Pass players current position and add the values of our Vector2 that is multiplied by moveSpeed and Time.fixedDeltaTime 
-        playerBody.MovePosition(playerBody.position + movement * characterClass.character.minMoveSpeed * Time.fixedDeltaTime);
-    }
-
-    void regenStamina()
-    {
-        if(playerStamina < characterClass.character.maxStamina)
-        {
-            playerStamina+= Time.fixedDeltaTime*(5+characterClass.character.staminaRegenRate); // add stamina regen property to character
-            staminaDisplay.setStamina(playerStamina);
-        }
-    }
-
-    void sprintCheck()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) && isMoving && playerStamina > 0)
-        {
-            playerBody.MovePosition(playerBody.position + movement * characterClass.character.MoveSpeed * Time.fixedDeltaTime);
-            playerStamina -= (characterClass.character.staminaBurnRate / 2);
-            staminaDisplay.setStamina(playerStamina);
-        }
-        else if (!isMoving && Input.GetKey(KeyCode.LeftShift))
-        {
-            regenStamina();
-        }
-        else
-        {
-            regenStamina();
-        }
-    }
-
-    void hideStaminaBar()
-    {
-        if (staminaDisplay.GetComponentInParent<Slider>().value == staminaDisplay.GetComponentInParent<Slider>().maxValue)
-        {
-            sliderFill.enabled = false;
-            sliderBorder.enabled = false;
-        }
-        else if (staminaDisplay.GetComponentInParent<Slider>().value != staminaDisplay.GetComponentInParent<Slider>().maxValue)
-        {
-            sliderFill.enabled = true;
-            sliderBorder.enabled = true;
-        }
+        playerBody.MovePosition(playerBody.position + movement * characterClass.character.minMoveSpeed * Time.fixedDeltaTime); 
     }
 
     void movingCheck()
@@ -125,12 +78,6 @@ public class Movement : MonoBehaviour
             isMoving = false;
             animator.SetBool("isRunning", false);
         }
-    }
-
-    public void staminaCost(float cost)
-    {
-        playerStamina -= cost;
-        staminaDisplay.setStamina(playerStamina);
     }
 
     //will flip the sprite to point to face the mouse if the player is standing still
@@ -173,11 +120,7 @@ public class Movement : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         characterClass = GetComponent<CharacterClass>();
-        staminaDisplay = FindObjectOfType<StaminaSlider>();
-        playerStamina = characterClass.character.maxStamina;
-
-        //set the stamina bar to display the maximum player stamina
-        staminaDisplay.setMaxStamina(playerStamina);
+        stamina = GetComponent<PlayerStamina>();
+        dodge = GetComponent<PlayerDodge>();
     }
-    
 }

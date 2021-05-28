@@ -21,10 +21,11 @@ public class EnemyObject : ScriptableObject
     public float baseDamage;
     public float maxDamage;
 
+    [Header("Point Value")]
+    public int pointValue;
 
-    public float projectileDamage;
-    //shooting stats
     [Header("Shooting Stats")]
+    public float projectileDamage;
     public bool canShoot = false;
     [Range(0f, 10f)]
     public float lineOfSight;
